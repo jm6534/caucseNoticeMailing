@@ -33,6 +33,7 @@ public class MailSender {
 	}
 
 	private static void sendMail(ArrayList<Post> posts) throws IOException, JSONException {
+		if(posts.isEmpty()) return;
 		Properties properties = System.getProperties();
 		setPropertiesForNaver(properties);
 		final String username = JsonParser.getSenderAddress();
